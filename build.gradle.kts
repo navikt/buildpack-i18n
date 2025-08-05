@@ -40,7 +40,3 @@ tasks {
 tasks.withType<BootBuildImage> {
     buildpacks = listOf("docker.io/paketobuildpacks/adoptium","urn:cnb:builder:paketo-buildpacks/java")
 }
-
-tasks.withType<Test> {
-	useJUnitPlatform()
-}
