@@ -3,7 +3,7 @@ import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 plugins {
     kotlin("jvm") version "1.9.25"
     kotlin("plugin.spring") version "1.9.25"
-	id("org.springframework.boot") version "3.5.4"
+	id("org.springframework.boot") version "3.5.0"
 	id("io.spring.dependency-management") version "1.1.7"
 }
 
@@ -37,6 +37,7 @@ tasks {
     }
 }
 
-tasks.withType<BootBuildImage> {
-    buildpacks = listOf("docker.io/paketobuildpacks/adoptium","urn:cnb:builder:paketo-buildpacks/java")
+tasks.named<BootBuildImage>("bootBuildImage") {
+    builder = "paketobuildpacks/builder-jammy-basex "
+    environment.put("BPE_LANG", "en_US.utf8")
 }

@@ -14,13 +14,13 @@ fun main(args: Array<String>) {
 }
 
 @RestController
-class HelloController(private val hello: HelloWørld) {
+class HelloController(private val hello: HelløWorld) {
 
 	@GetMapping("/")
 	fun hello() = hello.hello()
 }
 
 @Component
-class HelloWørld {
-    fun hello() = "Hello World 2"
+class HelløWorld {
+    fun hello() = "Hello Wørld 1"
 }
