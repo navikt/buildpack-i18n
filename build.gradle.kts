@@ -38,6 +38,5 @@ tasks {
 }
 
 tasks.named<BootBuildImage>("bootBuildImage") {
-    builder = "paketobuildpacks/builder-jammy-basex "
     environment.put("BPE_LANG", "en_US.utf8")
 }
